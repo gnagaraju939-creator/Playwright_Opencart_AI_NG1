@@ -36,4 +36,4 @@
   "test:datadriven": "playwright test --grep @datadriven",
   "test:master:headed": "playwright test --grep @sanity --headed",
   "test:sanity:debug": "playwright test --grep @sanity --debug"
-}gitgit
+}
