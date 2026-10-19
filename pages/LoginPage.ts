@@ -32,8 +32,8 @@ export class LoginPage {
    * @param password - Customer password
    */
   async login(email: string, password: string): Promise<void> {
-    await this.emailInput.fill(email);
-    await this.passwordInput.fill(password);
+    await this.emailInput.fill(email.trim() ? email : '');
+    await this.passwordInput.fill(password.trim() ? password : '');
     await this.submitButton.click();
   }
 

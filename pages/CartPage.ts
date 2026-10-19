@@ -46,8 +46,8 @@ export class CartPage {
     return {
       name: (await productRow.getByRole('link', { name: productName, exact: true }).last().innerText()).trim(),
       quantity: await productRow.getByRole('textbox').inputValue(),
-      unitPrice: (await cells.nth(3).innerText()).trim(),
-      lineTotal: (await cells.nth(4).innerText()).trim(),
+      unitPrice: (await cells.nth(4).innerText()).trim(),
+      lineTotal: (await cells.nth(5).innerText()).trim(),
       total: (await totalRow.getByRole('cell').last().innerText()).trim(),
     };
   }

@@ -43,11 +43,19 @@ export class RegisterPage {
   }
 
   /**
+   * Checks whether the customer registration page is displayed.
+   * @returns Promise<boolean> - true when the registration form is visible
+   */
+  async isRegistrationPageVisible(): Promise<boolean> {
+    return this.page.url().includes('route=account/register')
+      && await this.firstNameInput.isVisible();
+  }
+
+  /**
    * Fills and submits the customer registration form.
    * @param details - New customer details
    */
   async registerCustomer(details: CustomerDetails): Promise<void> {
-    await this.open();
     await this.firstNameInput.fill(details.firstName);
     await this.lastNameInput.fill(details.lastName);
     await this.emailInput.fill(details.email);
